@@ -21,6 +21,7 @@ public class LiteCoinWatchAddress {
             BlockChain chain = new BlockChain(params, wallet, blockStore);
             PeerGroup peerGroup = new PeerGroup(params, chain);
             peerGroup.addWallet(wallet);
+            peerGroup.setUserAgent("Litecoin", "0.8.7");
             peerGroup.addPeerDiscovery(new DnsDiscovery(params));
             peerGroup.startAndWait();
             peerGroup.downloadBlockChain();
